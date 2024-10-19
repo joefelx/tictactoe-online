@@ -1,0 +1,456 @@
+:root {
+  --primary: #fdb827;
+  --secondary: #f1f1f1;
+  --background: #171717;
+}
+
+img {
+  height: 70px;
+  aspect-ratio: 1;
+}
+
+.App {
+  position: relative;
+  width: 100%;
+}
+
+/* Game Page */
+
+.gamePage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--secondary);
+}
+
+.gameSide {
+  display: flex;
+  flex-direction: column;
+}
+
+.gameCode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.gameCode span {
+  font-size: 20px;
+}
+
+.gameCode .roomId {
+  font-family: "Courier New", Courier, monospace;
+  color: var(--primary);
+}
+
+.gameChoice {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.gameChoice span {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.active {
+  border-bottom: 3px solid var(--primary);
+  animation: ease-in-out;
+  animation-duration: 4s;
+  color: var(--primary);
+}
+
+@keyframes animation {
+  0% {
+    border-bottom: 0;
+  }
+
+  50% {
+    border-bottom: 1.5px solid var(--primary);
+  }
+
+  100% {
+    border-bottom: 3px solid var(--primary);
+  }
+}
+
+.gameBox {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  column-gap: 5px;
+  row-gap: 5px;
+  justify-content: center;
+}
+
+.box {
+  height: 150px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f1f1f1;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.gameConsole {
+  flex: 1;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary);
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(5, 5, 5, 0.2);
+  backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  text-shadow: 5px 0px var(--background);
+}
+
+.overlay .win {
+  color: var(--primary);
+}
+
+.overlay span {
+  font-size: 50px;
+  color: var(--primary);
+}
+
+.overlayContent {
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overlayContent button {
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  color: var(--secondary);
+  font-family: "Luckiest Guy", cursive;
+  text-transform: uppercase;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.overlayContent button:hover {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+/* Home Page */
+
+.home {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+}
+
+.home h1 {
+  font-size: 50px;
+}
+
+.home button {
+  width: 5rem;
+  height: 50px;
+  border-radius: 4px;
+
+  font-family: "Luckiest Guy";
+  text-transform: uppercase;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  background: var(--background);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.home button:hover {
+  background: var(--primary);
+  color: var(--background);
+  border: 2px solid var(--background);
+}
+
+.homePage {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background);
+  justify-content: center;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.homePage .options {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.homePage .left .heading {
+  color: var(--background);
+}
+
+.homePage .right .heading {
+  color: var(--primary);
+}
+
+.homePage img {
+  height: 10rem;
+  aspect-ratio: 1;
+}
+
+.homePage .left button {
+  width: 5rem;
+  height: 50px;
+  border-radius: 4px;
+  background: var(--background);
+  color: var(--secondary);
+  font-family: "Luckiest Guy";
+  text-transform: uppercase;
+  font-size: 20px;
+  border: 2px solid var(--background);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.roomPage {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.roomPage button {
+  margin-top: 20px;
+  width: 10rem;
+  height: 50px;
+  border-radius: 5px;
+  background: var(--primary);
+  color: var(--background);
+  font-family: "Luckiest Guy";
+  text-transform: uppercase;
+  font-size: 20px;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.roomGenerate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.roomGenerate h1 {
+  color: var(--primary);
+}
+
+.roomGenerate span {
+  color: var(--secondary);
+  font-size: 50px;
+}
+
+.roleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.roleContainer span {
+  margin-right: 20px;
+  color: var(--primary);
+}
+.roleContainer select {
+  font-family: "Luckiest Guy";
+  font-size: 30px;
+  margin: 0 10px;
+  padding: 5px;
+  color: var(--secondary);
+  background: none;
+  border: none;
+}
+.roleContainer select option {
+  font-family: "Luckiest Guy";
+  color: var(--background);
+  background: none;
+  border: none;
+}
+
+.inputField {
+  height: 100%;
+}
+
+.inputField input {
+  width: 100px;
+  height: 100%;
+  padding: 9px 20px;
+  border-radius: 5px;
+  border: 2px solid;
+  font-family: "Luckiest Guy";
+  letter-spacing: 1.5px;
+  font-size: 20px;
+}
+
+.inputField input::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.inputField input:focus {
+  outline: none;
+}
+
+.left {
+  text-align: center;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  padding: 10rem 0;
+  background-color: var(--primary);
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 3rem; */
+  /* background-color: rebeccapurple; */
+}
+
+.left input {
+  background-color: var(--background);
+  color: var(--primary);
+}
+
+.center {
+  position: absolute;
+  bottom: 40%;
+}
+
+.join {
+  height: 100%;
+}
+
+.join button {
+  width: 5rem;
+  height: 100%;
+  padding: 9px;
+  margin-left: 5px;
+  border-radius: 4px;
+  background: var(--background);
+  color: var(--secondary);
+  font-family: "Luckiest Guy";
+  text-transform: uppercase;
+  font-size: 20px;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.join button:hover {
+  background: var(--primary);
+  border: 2px solid var(--background);
+  color: var(--background);
+}
+
+.right {
+  flex: 1;
+  text-align: center;
+  padding: 10rem 0;
+  height: 100%;
+  height: 100%;
+}
+
+.right input {
+  background-color: var(--background);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+  background-color: #17171755;
+  backdrop-filter: blur(2px);
+}
+
+@media only screen and (max-width: 600px) {
+  .homePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homePage img {
+    height: 5rem;
+    aspect-ratio: 1;
+  }
+
+  .homePage input {
+    width: 15rem;
+  }
+
+  .homePage .xinputField {
+    margin-top: 2.5rem;
+  }
+
+  .homePage .oinputField {
+    margin-top: 2.5rem;
+  }
+
+  /* Game Page */
+  .box {
+    height: 100px;
+    aspect-ratio: 1;
+  }
+
+  .gameChoice span {
+    font-size: 1.5rem;
+  }
+
+  .overlayContent {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
