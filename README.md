@@ -16,14 +16,12 @@ Tic-Tac-Toe Online is a multiplayer version of the classic Tic-Tac-Toe game, des
 - **Frontend**:
   - HTML, CSS, JavaScript
   - React.js (for responsive and interactive UI)
-  - SocketIO (for real-time communication)
-  
+  - Socket.IO (for real-time communication)
+
 - **Backend**:
   - Node.js, Express.js (to handle server-side logic)
-  - SocketIO (for handling real-time connections)
-  
-- **Database**:
-  - MongoDB (to store game results, player profiles, etc.)
+  - TypeScript (developed using OOP concepts for better maintainability)
+  - Socket.IO (for handling real-time connections)
 
 ## Installation
 
@@ -63,7 +61,7 @@ Tic-Tac-Toe Online is a multiplayer version of the classic Tic-Tac-Toe game, des
     npm run dev
     ```
 
-3. Open your browser and navigate to `http://localhost:5173` to start playing Tic-Tac-Toe Online.
+3. Open your browser and navigate to `http://localhost:3000` to start playing Tic-Tac-Toe Online.
 
 ## Game Rules
 
